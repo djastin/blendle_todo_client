@@ -1,0 +1,10 @@
+<% if @note %>
+  <p>Weet je zeker dat je de volgende memo wilt verwijderen: <em>"<%=h @note.content %>"</em>?</p>
+  <form action="/<%= @note.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Ja, verwijder het!">
+    <a href="/<%= @note.id %>">Annuleren</a>
+  </form>
+<% else %>
+  <p>Memo niet gevonden.</p>
+<% end %>
